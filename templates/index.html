@@ -1,16 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Hello, SmartNinja</title>
-        <link rel="stylesheet" href="/static/css/style.css">
-    </head>
+{% extends "base.html" %}
+{% block title %}
+       DREKEC
+{% endblock title %}
 
-    <body>
-        <h1>Welcome back to HTML ;)</h1>
-    <a href="http://127.0.0.1:5000/portfolio">Porto</a>
-        <a href="http://127.0.0.1:5000/about">About</a>
-    <br>
-        <img src="/static/img/smartninja-logo.png">
-    </body>
-</html>
+
+{% block content %}
+    <p>Hello, index.html here!</p>
+    <p>{{some_text}}</p>
+    <p>{{current_year}}</p>
+<ol>
+   {% for city in cities %}
+    <p>{{city}}</p>
+{% endfor %}
+</ol>
+{% if cities %}
+    <p>The cities variable exists.</p>
+{% else %}
+    <p>There are no cities :(</p>
+{% endif %}
+{% endblock content %}
+
